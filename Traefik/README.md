@@ -43,6 +43,6 @@ docker network create proxynet
 
 [URL](https://traefik.demo.wireflex.online/)
 
-![image](https://github.com/user-attachments/assets/be582160-997d-4b48-a50b-a153542ea6b7)
+![image](https://github.com/user-attachments/assets/de7e0327-1d36-4d59-a3e4-2a8636bfb00d)
 
 [Конфигурация traefik в yml файле](https://www.youtube.com/watch?v=4sFcaTd10lU&t=1013s)
