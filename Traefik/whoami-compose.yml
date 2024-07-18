@@ -1,6 +1,9 @@
   whoami:
     image: traefik/whoami
-#    container_name: whoami
+    # вырубаем имя контейнера для будущего scale
+    # container_name: whoami
     labels:
+        # включение traefik для grafana
         - "traefik.enable=true"
+        # на этот контейнер будут перенаправляться запросы, которые приходят на whoami.demo
         - "traefik.http.routers.whoami.rule=Host(`whoami.demo.wireflex.online`)"
