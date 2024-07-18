@@ -1,0 +1,6 @@
+  apache:
+    image: httpd:latest
+    container_name: apache
+    labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.apache.rule=Host(`apache.demo.wireflex.online`)"
