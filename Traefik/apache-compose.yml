@@ -2,5 +2,7 @@
     image: httpd:latest
     container_name: apache
     labels:
+        # включение traefik для apache
         - "traefik.enable=true"
+        # на этот контейнер будут перенаправляться запросы, которые приходят на apache.demo
         - "traefik.http.routers.apache.rule=Host(`apache.demo.wireflex.online`)"
