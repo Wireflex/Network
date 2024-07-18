@@ -1,25 +1,42 @@
 services:
+
   reverse-proxy:
     image: traefik:v3.1.0
     command:
+  
+    # api с шифрованием, если нет ssl, ставим true
     - "--api.insecure=false"
+    # включение dashboard
     - "--api.dashboard=true"
+    
+    # провайдер docker/kubernetes/swarm
     - "--providers.docker"
+    # отключение автоматического добавления контейнеров
     - "--providers.docker.exposedByDefault=false"
+    # будет работать только с контейнерами в сети proxynet
     - "--providers.docker.network=proxynet"
+    
+    # чтобы видеть все ошибки и состояние traefik при подключении нового контейнера
     - "--log.level=DEBUG"
-    # Entrypoints:
+    
+    # Entrypoints: точки входа, которые слушают входящий трафик на портах 80,443,3306
     - "--entrypoints.http.address=:80"
+    - "--entrypoints.https.address=:443"
     - "--entrypoints.mysql.address=:3306"
+    
+    # перенаправление с http на htpps
     - "--entrypoints.http.http.redirections.entrypoint.to=https"
     - "--entrypoints.http.http.redirections.entrypoint.scheme=https"
-    - "--entrypoints.https.address=:443"
-    # Let's Encrypt
+    
+    # Let's Encrypt, получение ssl-сертификатов для https
     - "--entrypoints.https.http.tls.certResolver=le"
     - "--certificatesresolvers.le.acme.tlschallenge=true"
     - "--certificatesresolvers.le.acme.email=utyaganovnik@yandex.ru"
     - "--certificatesresolvers.le.acme.storage=/letsencrypt/acme.json"
+
+    # добавление метаданных
     labels:
+    # включение traefik
      - "traefik.enable=true"
      - "traefik.http.routers.dashboard.rule=Host(`traefik.demo.wireflex.online`)"
      - "traefik.http.routers.dashboard.entrypoints=https"
@@ -29,10 +46,11 @@ services:
     ports:
       - "80:80"
       - "443:443"
-      # The Web UI (enabled by --api.insecure=true)
-#      - "8080:8080"
       - "3306:3306"
+# The Web UI (enabled by --api.insecure=true)
+#     - "8080:8080"
     volumes:
-      # So that Traefik can listen to the Docker events
+      # чтобы traefik мог видеть другие контейнеры, запущенные на серве
       - /var/run/docker.sock:/var/run/docker.sock
+      # проброс ssl-сертификатов в контейнер
       - /opt/traefik/letsencrypt:/letsencrypt
