@@ -1,0 +1,38 @@
+services:
+  reverse-proxy:
+    image: traefik:v3.1.0
+    command:
+    - "--api.insecure=false"
+    - "--api.dashboard=true"
+    - "--providers.docker"
+    - "--providers.docker.exposedByDefault=false"
+    - "--providers.docker.network=proxynet"
+    - "--log.level=DEBUG"
+    # Entrypoints:
+    - "--entrypoints.http.address=:80"
+    - "--entrypoints.mysql.address=:3306"
+    - "--entrypoints.http.http.redirections.entrypoint.to=https"
+    - "--entrypoints.http.http.redirections.entrypoint.scheme=https"
+    - "--entrypoints.https.address=:443"
+    # Let's Encrypt
+    - "--entrypoints.https.http.tls.certResolver=le"
+    - "--certificatesresolvers.le.acme.tlschallenge=true"
+    - "--certificatesresolvers.le.acme.email=utyaganovnik@yandex.ru"
+    - "--certificatesresolvers.le.acme.storage=/letsencrypt/acme.json"
+    labels:
+     - "traefik.enable=true"
+     - "traefik.http.routers.dashboard.rule=Host(`traefik.test.wireflex.online`)"
+     - "traefik.http.routers.dashboard.entrypoints=https"
+     - "traefik.http.routers.dashboard.service=api@internal"
+     - "traefik.http.routers.dashboard.middlewares=auth"
+     - "traefik.http.middlewares.auth.basicauth.users=wireflex:$$apr1$$EbJL18XP$$lUKElP3HMrSBKlo7qHNCU/"
+    ports:
+      - "80:80"
+      - "443:443"
+      # The Web UI (enabled by --api.insecure=true)
+#      - "8080:8080"
+      - "3306:3306"
+    volumes:
+      # So that Traefik can listen to the Docker events
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./letsencrypt:/letsencrypt
