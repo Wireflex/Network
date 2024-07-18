@@ -4,7 +4,7 @@ services:
     image: traefik:v3.1.0
     command:
   
-    # api с шифрованием, если нет ssl, ставим true
+    # api с шифрованием, if ports=8000:8000,then true
     - "--api.insecure=false"
     # включение dashboard
     - "--api.dashboard=true"
