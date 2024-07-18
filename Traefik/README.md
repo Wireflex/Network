@@ -16,6 +16,8 @@ docker --version
 ```
 </details>
 
+----
+
 Добавляем А-запись *.demo ( все поддоменные имена будут направляться на указанный IP ) 
 ![image](https://github.com/user-attachments/assets/8ced4e05-3e2e-4088-9376-aea1cdf1a01c)
 
