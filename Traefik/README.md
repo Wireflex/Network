@@ -19,14 +19,16 @@ docker --version
 Добавляем А-запись *.demo ( все поддоменные имена будут направляться на указанный IP ) 
 ![image](https://github.com/user-attachments/assets/8ced4e05-3e2e-4088-9376-aea1cdf1a01c)
 
-## [Traefik-compose.yml](Traefik/traefik-compose.yml)
+### [Traefik](https://github.com/Wireflex/Network/blob/2196175a3fe2e6204369bbe2ef7f3c43d0839404/Traefik/traefik-compose.yml)
 
-## [Nginx](Traefik/nginx-compose.yml)
+### [Nginx](https://github.com/Wireflex/Network/blob/2196175a3fe2e6204369bbe2ef7f3c43d0839404/Traefik/nginx-compose.yml)
 
-## [Apache](Traefik/apache-compose.yml)
+### [Apache](https://github.com/Wireflex/Network/blob/2196175a3fe2e6204369bbe2ef7f3c43d0839404/Traefik/apache-compose.yml)
 
-## [Grafana](Traefik/grafana-compose.yml)
+### [Grafana](https://github.com/Wireflex/Network/blob/2196175a3fe2e6204369bbe2ef7f3c43d0839404/Traefik/grafana-compose.yml)
 
-## [Whoami](Traefik/whoami-compose.yml)
+### [Whoami](https://github.com/Wireflex/Network/blob/2196175a3fe2e6204369bbe2ef7f3c43d0839404/Traefik/whoami-compose.yml)
 
-## [Mysql](Traefik/mysql-compose.yml)
+### [Mysql](https://github.com/Wireflex/Network/blob/2196175a3fe2e6204369bbe2ef7f3c43d0839404/Traefik/mysql-compose.yml)
+
+## [Final docker-compose.yml](https://github.com/Wireflex/Network/blob/2196175a3fe2e6204369bbe2ef7f3c43d0839404/Traefik/docker-compose.yml)
