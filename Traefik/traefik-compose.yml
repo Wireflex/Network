@@ -36,12 +36,16 @@ services:
 
     # добавление метаданных
     labels:
-    # включение traefik
+     # включение traefik
      - "traefik.enable=true"
+     # на этот контейнер будут перенаправляться запросы, которые приходят на traefik.demo
      - "traefik.http.routers.dashboard.rule=Host(`traefik.demo.wireflex.online`)"
+     # entrypoint https
      - "traefik.http.routers.dashboard.entrypoints=https"
      - "traefik.http.routers.dashboard.service=api@internal"
+     # аутентификация
      - "traefik.http.routers.dashboard.middlewares=auth"
+     # echo $(htpasswd -nb юзер пароль) | sed -e s/\\$/\\$\\$/g
      - "traefik.http.middlewares.auth.basicauth.users=wireflex:$$apr1$$EbJL18XP$$lUKElP3HMrSBKlo7qHNCU/"
     ports:
       - "80:80"
