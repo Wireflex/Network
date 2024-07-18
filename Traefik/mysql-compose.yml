@@ -1,0 +1,15 @@
+  mysql:
+    image: mariadb:latest
+    restart: always
+    container_name: mariadb
+    environment:
+      - MYSQL_DATABASE=mysqldb
+      - MYSQL_USER=userdb
+      - MYSQL_PASSWORD=passdb
+      - MYSQL_ROOT_PASSWORD=rootpassdb
+    labels:
+        - "traefik.enable=true"
+        - "traefik.tcp.routers.mysql.rule=HostSNI(`*`)"
+        - "traefik.tcp.routers.mysql.entrypoints=mysql"
+        - "traefik.tcp.routers.mysql.service=mysql-svc"
+        - "traefik.tcp.services.mysql-svc.loadbalancer.server.port=3306"
