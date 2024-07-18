@@ -2,6 +2,9 @@
     image: grafana/grafana:latest
     container_name: grafana
     labels:
+        # включение traefik для grafana
         - "traefik.enable=true"
+        # на этот контейнер будут перенаправляться запросы, которые приходят на grafana.demo
         - "traefik.http.routers.grafana.rule=Host(`grafana.demo.wireflex.online`)"
+        # traefik будет перенаправлять запросы именно на 3000 порт,больше для контейнеров,где несколько портов
         - "traefik.http.services.grafana.loadbalancer.server.port=3000"
