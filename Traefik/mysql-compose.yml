@@ -8,8 +8,14 @@
       - MYSQL_PASSWORD=passdb
       - MYSQL_ROOT_PASSWORD=rootpassdb
     labels:
+        # включаем traefik
         - "traefik.enable=true"
+        # добавления правила перенаправления запросов
         - "traefik.tcp.routers.mysql.rule=HostSNI(`*`)"
+        # entrypoint, созданный ранее порт 3306
         - "traefik.tcp.routers.mysql.entrypoints=mysql"
         - "traefik.tcp.routers.mysql.service=mysql-svc"
         - "traefik.tcp.services.mysql-svc.loadbalancer.server.port=3306"
+        
+# mysql -h IP -u root -pROOTPASSWORD (слитно)
+# show database;
