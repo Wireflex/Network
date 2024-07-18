@@ -1,6 +1,6 @@
   whoami:
     image: traefik/whoami
-    # вырубаем имя контейнера для будущего scale ( docker compose -f whoami-compose.yml up -d --scale whoami=2 )
+    # вырубаем имя контейнера для будущего scale ( docker compose -f whoami-compose.yml up -d --scale whoami=2 ) будет работать loadbalancer
     # container_name: whoami
     labels:
         # включение traefik для grafana
