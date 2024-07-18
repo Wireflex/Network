@@ -1,0 +1,6 @@
+  whoami:
+    image: traefik/whoami
+#    container_name: whoami
+    labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.whoami.rule=Host(`whoami.demo.wireflex.online`)"
