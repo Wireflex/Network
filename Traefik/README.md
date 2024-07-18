@@ -21,6 +21,12 @@ docker --version
 Добавляем А-запись *.demo ( все поддоменные имена будут направляться на указанный IP ) 
 ![image](https://github.com/user-attachments/assets/8ced4e05-3e2e-4088-9376-aea1cdf1a01c)
 
+Создаём сеть, которая будет управляться с помощью traefik
+```
+docker network create proxynet
+```
+Все labels можно посмотреть [тут](https://doc.traefik.io/traefik/reference/dynamic-configuration/docker/)
+
 ### [Traefik](https://github.com/Wireflex/Network/blob/2196175a3fe2e6204369bbe2ef7f3c43d0839404/Traefik/traefik-compose.yml)
 
 ### [Nginx](https://github.com/Wireflex/Network/blob/2196175a3fe2e6204369bbe2ef7f3c43d0839404/Traefik/nginx-compose.yml)
@@ -36,3 +42,5 @@ docker --version
 ## [Final docker-compose.yml](https://github.com/Wireflex/Network/blob/2196175a3fe2e6204369bbe2ef7f3c43d0839404/Traefik/docker-compose.yml)
 
 [URL](https://traefik.demo.wireflex.online/)
+
+![image](https://github.com/user-attachments/assets/be582160-997d-4b48-a50b-a153542ea6b7)
