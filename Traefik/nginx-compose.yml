@@ -2,5 +2,7 @@
     image: nginx:latest
     container_name: nginx
     labels:
+        # включение traefik для nginx
         - "traefik.enable=true"
+        # на этот контейнер будут перенаправляться запросы, которые приходят на nginx.demo
         - "traefik.http.routers.nginx.rule=Host(`nginx.demo.wireflex.online`)"
