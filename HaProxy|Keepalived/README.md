@@ -1,5 +1,5 @@
 ![image](https://github.com/user-attachments/assets/4f38ef37-7ec1-4df0-a89b-2e63b5bc62b6)
-
+----
 Ставим апаче с кастом страницей на WEB01 и WEB02
 
 ```
@@ -17,6 +17,7 @@ apt install haproxy
 ```
 
 Дописываем в конце конфига 👉 /etc/haproxy/[haproxy.cfg](https://github.com/Wireflex/Network/blob/3c20f3e768978ad461492429995c3861ac6909f3/HaProxy%7CKeepalived/haproxy.cfg)
+----
 
 ![image](https://github.com/user-attachments/assets/7996ff93-2ae3-46a5-9c8d-2b33bc1c7f49)
 
