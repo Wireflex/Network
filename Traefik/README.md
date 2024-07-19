@@ -27,19 +27,19 @@ docker network create proxynet
 ```
 Все labels можно посмотреть [тут](https://doc.traefik.io/traefik/reference/dynamic-configuration/docker/)
 
-### [Traefik](https://github.com/Wireflex/Network/blob/2196175a3fe2e6204369bbe2ef7f3c43d0839404/Traefik/traefik-compose.yml)
+### [Traefik](https://github.com/Wireflex/Network/blob/a5544d08f2f20b735e220614461db670beed6ade/Traefik/traefik-compose.yml)
 
-### [Nginx](https://github.com/Wireflex/Network/blob/2196175a3fe2e6204369bbe2ef7f3c43d0839404/Traefik/nginx-compose.yml)
+### [Nginx](https://github.com/Wireflex/Network/blob/a5544d08f2f20b735e220614461db670beed6ade/Traefik/nginx-compose.yml)
 
-### [Apache](https://github.com/Wireflex/Network/blob/2196175a3fe2e6204369bbe2ef7f3c43d0839404/Traefik/apache-compose.yml)
+### [Apache](https://github.com/Wireflex/Network/blob/a5544d08f2f20b735e220614461db670beed6ade/Traefik/apache-compose.yml)
 
-### [Grafana](https://github.com/Wireflex/Network/blob/2196175a3fe2e6204369bbe2ef7f3c43d0839404/Traefik/grafana-compose.yml)
+### [Grafana](https://github.com/Wireflex/Network/blob/a5544d08f2f20b735e220614461db670beed6ade/Traefik/grafana-compose.yml)
 
-### [Whoami](https://github.com/Wireflex/Network/blob/2196175a3fe2e6204369bbe2ef7f3c43d0839404/Traefik/whoami-compose.yml)
+### [Whoami](https://github.com/Wireflex/Network/blob/a5544d08f2f20b735e220614461db670beed6ade/Traefik/whoami-compose.yml)
 
-### [Mysql](https://github.com/Wireflex/Network/blob/2196175a3fe2e6204369bbe2ef7f3c43d0839404/Traefik/mysql-compose.yml)
+### [Mysql](https://github.com/Wireflex/Network/blob/a5544d08f2f20b735e220614461db670beed6ade/Traefik/mysql-compose.yml)
 
-## [Final docker-compose.yml](https://github.com/Wireflex/Network/blob/2196175a3fe2e6204369bbe2ef7f3c43d0839404/Traefik/docker-compose.yml)
+## [Final docker-compose.yml](https://github.com/Wireflex/Network/blob/a5544d08f2f20b735e220614461db670beed6ade/Traefik/docker-compose.yml)
 
 [URL](https://traefik.demo.wireflex.online/)
 
