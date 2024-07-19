@@ -23,7 +23,7 @@ apt install haproxy
 
 ![image](https://github.com/user-attachments/assets/7996ff93-2ae3-46a5-9c8d-2b33bc1c7f49)
 
-Устанавливаем [keepalived](https://www.keepalived.org/) и конфигурируем его на LB01 и LB02
+Устанавливаем [Keepalived](https://www.keepalived.org/) и конфигурируем его на LB01 и LB02
 
 ```
 apt install keepalived
