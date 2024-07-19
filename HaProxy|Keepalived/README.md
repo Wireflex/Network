@@ -11,7 +11,7 @@ apt install apache2
 
 ![image](https://github.com/Wireflex/Network/assets/165675775/71c22c76-663b-4b2e-84d1-074d0bf93b98)
 
-Устанавливаем HAProxy и конфигурируем его на LB01 и LB02
+Устанавливаем [HAProxy](https://www.haproxy.org/) и конфигурируем его на LB01 и LB02
 
 ```
 apt install haproxy
@@ -23,7 +23,7 @@ apt install haproxy
 
 ![image](https://github.com/user-attachments/assets/7996ff93-2ae3-46a5-9c8d-2b33bc1c7f49)
 
-Устанавливаем keepalived и конфигурируем его на LB01 и LB02
+Устанавливаем [keepalived](https://www.keepalived.org/) и конфигурируем его на LB01 и LB02
 
 ```
 apt install keepalived
