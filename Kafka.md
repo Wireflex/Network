@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/17326584-2f4c-4fb8-85f1-6d4ab6098b53)
+![image](https://github.com/user-attachments/assets/36fa924a-f81b-49a2-bf51-627e10df4c0b)
 
 В директории кафки:
 
